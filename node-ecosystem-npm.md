@@ -348,7 +348,8 @@ $ node .
 HTTP Server Started
 ```
 
-![Up, Up, And Away! in browser](/Users/mclark/Projects/notch8/voltjs/assets/node-ecosystem-npm/up-up-and-away-browser.png)
+![Up, Up, And Away! in
+browser](./assets/node-ecosystem-npm/up-up-and-away-browser.png)
 
 And there we are!  We have now created a webserver that serves out ASCII art using a 3rd party module.  We could take our application, deploy it somewhere, and share it with the world.  There are a few topics we should look at first.  Did you notice that we set our content type to be 'text/plain' in this line?
 
