@@ -128,14 +128,14 @@ console.log(legume, "is tasty too")
 
 Output:
 -------------------------
-squash are good for us!
-squash are good for us!
+squash is good for us!
+squash is good for us!
 tomato is good for us
 pinto is tasty too
 ````
 
 Const creates variables that are called 'immutable', meaning that their
-value can not be changed.  An interesting thing to not however, is that
+value can not be changed.  An interesting thing to note however, is that
 the thing assigned to that variable is not immutable, and can be modified.
 If we were to assign a json object to a constant variable, for example, we
 could assign and re-assign the attributes of that object without any
@@ -155,7 +155,7 @@ vegetable.recomendedServings = 6
 
 console.log("modified", vegetable)
 
-//We can even add attributes to a JavaScript object
+//We can even add attributes to a Const JavaScript object
 vegetable.shelfLife = "36 days"
 
 console.log("amended", vegetable)
