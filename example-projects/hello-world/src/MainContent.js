@@ -70,7 +70,9 @@ class MainContent extends Component {
           <form-control>
             <label>New Topic</label>
             <br />
-            <input id='topic-input' value={this.state.topicInput} onChange={this.handleTopicInputChange.bind(this)} />
+            <input id='topic-input' 
+              value={this.state.topicInput} 
+              onChange={this.handleTopicInputChange.bind(this)} />
           </form-control>
           <input type='submit' value='Add Topic' />
         </form>

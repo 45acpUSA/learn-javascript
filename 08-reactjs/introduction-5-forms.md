@@ -107,6 +107,8 @@ Are you wondering about the `.bind(this)` on the `form` and `input` dom elements
 
 Our topic list is now complete.  We can add and remove as many topics as we like.  We've learned how to manage state within a component, and how to have full control over form elements.  Here is the complete MainContent.js component:
 
+![Complete Form](./assets/reactjs-introduction/list-controls.png)
+
 ```javascript
 
 import React, { Component } from 'react';
@@ -181,7 +183,9 @@ class MainContent extends Component {
           <form-control>
             <label>New Topic</label>
             <br />
-            <input id='topic-input' value={this.state.topicInput} onChange={this.handleTopicInputChange.bind(this)} />
+            <input id='topic-input' 
+              value={this.state.topicInput} 
+              onChange={this.handleTopicInputChange.bind(this)} />
           </form-control>
           <input type='submit' value='Add Topic' />
         </form>

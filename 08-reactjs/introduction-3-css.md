@@ -53,7 +53,7 @@ We need to add the classNames to the App.js template too
 ...
 ```
 
-!(Portfolio App with styles)[../assets/reactjs-introduction/basic-components.png]
+![Portfolio App with styles](../assets/reactjs-introduction/basic-components.png)
 
 This gives us a decent looking page that is well organized.  Those are still
 a little plain however.  We don't need the bullet next to each one at least. We

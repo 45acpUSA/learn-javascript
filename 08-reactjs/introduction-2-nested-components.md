@@ -133,6 +133,6 @@ class App extends Component {
 export default App;
 ```
 
-!(React Components)[../assets/reactjs-introduction/basic-components.png]
+![React Components](../assets/reactjs-introduction/basic-components.png)
 
 
