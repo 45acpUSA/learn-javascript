@@ -1,0 +1,21 @@
+.app-container{
+  display: flex;
+  flex-direction: column;
+
+  margin: 30px;
+}
+
+.app-main-content{
+  display: flex;
+}
+
+.app-projects{
+  margin: 0 30px;
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .app-main-content{
+    flex-direction: column;
+  }
+}

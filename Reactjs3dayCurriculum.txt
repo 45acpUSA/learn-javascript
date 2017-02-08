@@ -1,0 +1,85 @@
+﻿Reactjs 3 day Curriculum
+Day 1
+1. Welcome
+  - Syllabus
+  - Schedule
+  - Expectations
+
+
+2. Build a single page React app
+  - Portfolio
+  - Single page, React based, portfolio of work done in class
+  - Assignment format, follow instructions
+
+
+3. Reactjs, and why it changes the game
+  - For years we had JQuery, and we were happy
+    - More programmer friendly than pure Javascript
+    - AJAX
+    - Manipulating the DOM
+    - Problems as apps got more complex
+      - State still managed in DOM
+        - Persisting state
+      - JS engine inconsistencies
+  - Dawn of the Frameworks
+    - Backbone, Angular were first
+    - Knockout, Batman, Meteor, Viewjs, etc.
+    - Ember
+    - React and Ember won
+      - Shadow DOM
+
+
+4. Tic-Tac-Toe in pure Javascript
+  - Instructor led
+  - point out managing state in dom
+  - refactor to pull state out of dom
+  - introduce a render function
+
+
+5. Tic-Tac-Toe using React
+  - Assignment format, follow instructions
+
+
+Day 2
+6. A closer look at components
+  - Instructor led
+  - refactor Tic-Tac-Toe to make better use of components
+  - state
+  - props
+  - component lifecycle
+    - constructor
+    - defined
+    - mounted
+    - rendered
+    - destroyed
+
+
+7. Connect to a backend / Questions about React app
+  - Instructor introduction
+  - introduce prebuilt api for questions app (Rails app)
+  - Assignment format, follow instructions
+
+
+8. Redux and the container pattern
+* Instructor introduction
+* Instructor refactor Todo app to use Redux
+*  Students refactor Tic-Tac-Toe to use Redux
+
+
+Day 3
+9. React Router
+  - Instructor introduction
+  - Assignment - Share questions and upvote, show favorites
+
+
+10. Multiplayer Tic-Tac-Toe
+  - pre-built api (Rails app)
+  - Assignment - Refactor tic-tac-toe app to be multiplayer
+
+
+11. ReactDOM, what was that?
+  - Instructor review of separation of app logic and rendering
+  - Introduction to React Native (no coding)
+
+
+12.  Closing Thank You
