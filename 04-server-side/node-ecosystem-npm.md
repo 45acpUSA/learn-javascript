@@ -8,7 +8,7 @@ a wrapper around the Chrome V8 engine, which is the exact same library
 that the browser uses.  
 
 ![Node.js wraps V8, just like
-Chrome](./assets/node-ecosystem-npm/node-chrome-v8.png)
+Chrome](../assets/node-ecosystem-npm/node-chrome-v8.png)
 
 This provides all the capabilities of JavaScript server side, where we can
 do a host of interesting things:
