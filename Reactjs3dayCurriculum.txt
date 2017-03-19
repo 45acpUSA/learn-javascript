@@ -12,6 +12,13 @@ Day 1
   - Assignment format, follow instructions
 
 
+
+Logical control in render function
+(logical if)
+(String Interpolation)
+
+
+
 3. Reactjs, and why it changes the game
   - For years we had JQuery, and we were happy
     - More programmer friendly than pure Javascript
@@ -60,10 +67,15 @@ Day 2
   - Assignment format, follow instructions
 
 
+
 8. Redux and the container pattern
 * Instructor introduction
 * Instructor refactor Todo app to use Redux
 *  Students refactor Tic-Tac-Toe to use Redux
+
+Using Redux and ReactRouter together
+http://stackoverflow.com/questions/36722584/how-to-sync-redux-state-and-url-hash-tag-params/36749963#36749963
+(ownProps)
 
 
 Day 3
