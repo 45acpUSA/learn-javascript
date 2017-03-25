@@ -56,7 +56,7 @@ Catamaran.prototype.sail = function(){
 ```
 
 
-ES6 introduces Classes
+# ES6 introduces Classes
 
 ```Javascript
 class Sailboat{
@@ -91,7 +91,9 @@ class Catamaran extends Sailboat{
 
 ```
 
-Constructor and method attributes
+## Constructor and method attributes
+
+When we create a new instance of our class, we often need to configure it with its own attributes.  When our program calls `new Catamaran()`, a special method is called the constructor.  The constructor's responsibility is to initialize the object so it is ready for use.  In an ES6 class, the initialization method is conveniently called `constructor`.  If you put a method called `constructor` in your class it will automatically be called for each new instance of that object that you create.
 
 ```
 class Sailboat{
@@ -115,7 +117,9 @@ class Sailboat{
 let boat = new Sailboat('blue', 6)
 ```
 
-default values
+## Default Values
+
+You may want to provide some defaults for new instances of your object.  This way code creating new objects don't have to always pass in the configuration values if they are fine with reasonable defaults.  
 
 ```Javascript
   constructor(color, maxSpeed=6){
@@ -134,9 +138,9 @@ let boat = new Sailboat('red')
 console.log(boat.maxSpeed)
 ```
 
-desstructuring attributes
+## Static Methods
 
-Static Methods
+We can also create methods that span all instances of the class called 'static' or 'class' methods.  These are useful to do things that don't involve a particular instance, as in this example, available colors.
 
 ```Javascript
   class Sailboat{
