@@ -1,7 +1,7 @@
 # Block Scope
 
 ## Scope Review
-Remember back to the first week of class when we covered variable scope.  Variable scope means the section of code where a variable is visible, or 'in scope'.  When we define a variable inside of a function using `var` the variable is usable anywhere inside that function.  That may seem obvious enough, but there is actually enough going on here that its worth diving down into the scope of our variables and understanding their scope.  Create a new file and try some of these experiments:
+Remember back to the second week of class when we covered variable scope.  Variable scope means the section of code where a variable is visible, or 'in scope'.  When we define a variable inside of a function using `var` the variable is usable anywhere inside that function.  If we define a variable outside of any function, then it is in the 'global' scope.  We also talked about the special 'this' variable inside of Javascript Objects and lexical scope.  In this module, we're going to do a quick review, and then introduce one more type of scope that is new in ES6.  Create a new file and try some of these experiments:
 
 ```Javascript
 // ./block-scope-experiment.js
@@ -165,7 +165,7 @@ console.log(favoriteFruit);
 const favoriteFruit = 'apples'; //Nope! This throws an exception
 ```
 
-One important note about `const`.  Its only the thing that is directly assigned to the const variable that mus t remain constant.  If we assign an array, or object to a `const` variable, we can change the attributes of that thing without issue.
+One important note about `const`.  Its only the thing that is directly assigned to the const variable that must remain constant.  If we assign an array, or object to a `const` variable, we can change the attributes of that thing without issue.
 
 ```Javascript
 // ./const-experiment.js
