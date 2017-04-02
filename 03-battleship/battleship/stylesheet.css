@@ -1,0 +1,36 @@
+.game{
+  display: flex;
+}
+.board{
+  display: flex;
+  width: 500px;
+  height: 500px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  jusitify-content: flex-start;
+}
+.cell{
+  height: 50px;
+  width: 50px;
+  box-sizing: border-box;
+  background-color: blue;
+  border: 1px solid black;
+}
+.cell:hover{
+  cursor: pointer;
+  background-color: green;
+}
+
+.cell.occupied{
+  background-color: grey;
+}
+.cell.miss{
+  background-color: pink;
+}
+.cell.hit{
+  background-color: red;
+}
+.cell.sunk{
+  background-color: black;
+}
+
