@@ -1,3 +1,3 @@
 ## TODO
 
-- [  ] module.export and require
+- [ ] module.export and require
