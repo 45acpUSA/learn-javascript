@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <style>
+      .board{
+        display: flex;
+        width: 600px;
+        height: 600px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .square{
+        height: 200px;
+        width: 200px;
+        box-sizing: border-box;
+        border: 5px solid black;
+        font-size: 5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .square:hover{
+        cursor: pointer;
+        background-color: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class='board'>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+      <div class='square'></div>
+    </div>
+
+    <script>
+      var PLAYER_ONE = 'X'
+      var PLAYER_TWO = 'O'
+      var currentPlayer = PLAYER_ONE
+      var gameWinner = undefined
+
+      var board = document.querySelector('.board')
+      board.addEventListener('click', function(e){
+        if(e.target.innerHTML == '' && !gameWinner){
+          e.target.innerHTML = currentPlayer
+          currentPlayer = currentPlayer === PLAYER_ONE ? PLAYER_TWO : PLAYER_ONE 
+          let winner = checkForWinner()
+          if(winner){
+            alert(`${winner} is the winner!`)
+            gameWinner = winner
+          }
+        }
+      })
+
+      function checkForWinner(){
+        var squares = document.querySelectorAll('.square')
+        var symbols = []
+        squares.forEach(function(square){
+          symbols.push(square.innerHTML)
+        })
+        var winningCombos = [
+          [0, 1, 2], 
+          [3, 4, 5], 
+          [6, 7, 8], 
+          [0, 3, 6], 
+          [1, 4, 7], 
+          [2, 5, 8], 
+          [0, 4, 8], 
+          [2, 4, 6]
+        ]
+
+        var winner = false
+        winningCombos.find(function(combo){
+          if(symbols[combo[0]] == symbols[combo[1]] && symbols[combo[1]] == symbols[combo[2]]){
+            winner = symbols[combo[0]]
+          }
+        })
+
+        return winner
+      }
+    </script>
+  </body>
+</html>
