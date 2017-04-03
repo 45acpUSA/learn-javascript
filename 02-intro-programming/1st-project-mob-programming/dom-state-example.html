@@ -1,0 +1,22 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1 id='greeting'>Hello Bob</h1>
+    <button onclick="greetNext()">Greet Next Person</button>
+    <script>
+      function greetNext(){
+        var element = document.getElementById('greeting');
+        var currentGreeting = element.innerHTML;
+        if(currentGreeting == 'Hello Bob'){
+          var nextGreeting = 'Hello Mary';
+        }else if(currentGreeting == 'Hello Mary'){
+          var nextGreeting = 'Hello Carson';
+        }else if(currentGreeting == 'Hello Carson'){
+          var nextGreeting = 'Hello Bob';
+        }
+        element.innerHTML = nextGreeting;
+      }
+    </script>
+  </body>
+</html>
