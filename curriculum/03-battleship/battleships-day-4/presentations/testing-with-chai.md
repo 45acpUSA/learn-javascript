@@ -1,4 +1,4 @@
-# Testing with Chai
+# Testing with Mocha and Chai
 
 By now you're familiar with the development pattern of adding some code, then reloading your browser to see the affects of your new code, making some more changes, then reloading your browser again.
 
@@ -8,10 +8,12 @@ As your application grows, it won't be practical to evaluate the affect of each 
 
 We can use code to continuously test our code and make sure that it is behaving in the way we expect after every code change.  You'll hear this referred to as 'automated testing', or 'unit tests'.  Its very powerful, and it will not only help you write bug free code, you'll write better crafted code when you test it, because it will help you think more like an end user who is interacting with your application.
 
+Most all tests follow the same pattern to setup and test.  In Psuedocode, each test will:
+
 ```Javascript
 //Setup any code we need to run the test
 //Call a function with specific attributes.
-//assert that the response is what you expect
+//assert that the response is what we expect
 ```
 
 Let's look at one of the functions the "Javascript Objects, Scope and Closures" day as an example.
