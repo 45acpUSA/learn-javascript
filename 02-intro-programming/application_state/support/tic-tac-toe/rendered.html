@@ -61,6 +61,20 @@
         return winner
       }
 
+      function handleClick(index){
+        if(gameState.board[index] == ''){
+          gameState.board[index] = gameState.currentPlayer
+          gameState.currentPlayer = gameState.currentPlayer == gameState.PLAYER_ONE ? gameState.PLAYER_TWO : gameState.PLAYER_ONE
+
+          let winner = checkForWinner()
+          if(winner){
+            alert(`${winner} is the winner!`)
+            gameState.gameWinner = winner
+          }
+          render(gameState)
+        }
+      }
+
       function render(state){
         var renderedHtml = "<div class='board'>" +
           "<div class='square' onclick='handleClick(0)'>" +state.board[0]+ "</div>" +
@@ -78,19 +92,6 @@
       }
       render(gameState)
 
-      function handleClick(index){
-        if(gameState.board[index] == ''){
-          gameState.board[index] = gameState.currentPlayer
-          gameState.currentPlayer = gameState.currentPlayer == gameState.PLAYER_ONE ? gameState.PLAYER_TWO : gameState.PLAYER_ONE
-
-          let winner = checkForWinner()
-          if(winner){
-            alert(`${winner} is the winner!`)
-            gameState.gameWinner = winner
-          }
-          render(gameState)
-        }
-      }
     </script>
   </body>
 </html>

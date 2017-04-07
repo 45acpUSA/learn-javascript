@@ -18,6 +18,7 @@ console.log("varColor:        "+ varColor);
   console.log("anotherLetColor: "+anotherLetColor+" <---- We've masked the let variable with a new one in our block");
   console.log("varColor:        "+ varColor);
 }
+
 console.log('\nAfter the block\n================');
 console.log("letColor:        "+letColor);
 console.log("anotherLetColor: "+anotherLetColor);
