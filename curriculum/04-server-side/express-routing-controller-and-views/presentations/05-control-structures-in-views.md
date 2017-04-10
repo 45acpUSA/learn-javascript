@@ -12,18 +12,22 @@ app.get('/', function (request, response) {
 We’re going to introduce one additional topic in this view, how to use Javascript for control structures like loops, and ‘if’ conditionals.  Using Javascript, we can iterate over the questions, and show them as links.  Replace the contents of the <body> section in index.ejs to look like this:
 
 ```javascript
-<body>
-  <h3> San Diego Trivia </h3>
-  <ul>
-    <% for(var key in questions) { %>
-      <li>
-        <a href="/trivia/<%= key %>">
-          <%= questions[key]["question"] %>
-        </a>
-      </li>
-    <% } %>
-  </ul>
-</body>
+<html>
+  <head>
+  </head>
+  <body>
+    <h3> San Diego Trivia </h3>
+    <ul>
+      <% for(var key in questions) { %>
+        <li>
+          <a href="/trivia/<%= key %>">
+            <%= questions[key]["question"] %>
+          </a>
+        </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
 ```
 
 The new bit here is the ```for()``` loop that we use to display each of the questions.  Up until now, ejs files looked a lot like plain old html files.  This time, we’ve added dynamic content.  A lot more html was generated and served to the browser than the number of characters we had to type into the file.  In ejs files, we can write javascript inline with our html to help us build the markup that gets generated.  It’s important to remember that this javascript is evaluated on the server, and not sent to the browser.  All the javascript contained in the <% … %> tags is evaluated and replaced before it is served.  Let’s look at it line by line

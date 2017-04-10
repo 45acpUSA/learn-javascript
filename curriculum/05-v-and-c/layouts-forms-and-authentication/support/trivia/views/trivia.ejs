@@ -1,0 +1,30 @@
+<div class='question'>
+  <%= question %>
+</div>
+
+<form>
+  <% for(var index in answers){ %> 
+    <div class='option'>
+      <label>
+        <input type='radio' name='selected-answer' value="<%= index %>" />
+        <%= answers[index] %>
+      </label>
+    </div>
+  <% } %>
+
+  <br />
+  <div class='question-feedback'>
+    <label>Was that a difficult question?</label>
+    <input type='text' name='feedback' />
+  </div>
+
+  <br />
+  <div class='submit'>
+    <input type='submit' />
+  </div>
+</form>
+
+<br />
+<a href="/">Back</a>
+
+

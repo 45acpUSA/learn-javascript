@@ -16,11 +16,6 @@ $ mkdir export-example
 $ cd export-example
 ```
 
-```Javascript
-// ./counter.js
-
-```
-
 Our first try at the marbles game looks like this:
 
 ```Javascript

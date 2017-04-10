@@ -69,7 +69,7 @@ $ npm test
   1 passing (12ms)
 ```
 
-Great, everything is working.  Now we can delete the setup check, and writ a failing test.  
+Great, everything is working.  Now we can delete the setup check, and write a failing test.  
 
 ```Javascript
 // ./test/check-for-winner-test.js
