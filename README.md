@@ -35,8 +35,10 @@ Review plans for next week, and identify last minute changes
 
 After the Monday meeting about the next week's lessons, all changes will be PR'd
 
-## Github issues
+## Trello  Board
 
-Github issues are used for feedback and improvements that can be made to the curriculum.  They are a quick place to capture feedback as the class is in session.
+We use a Trello Kanban board to track Todo and current curriculum efforts.
+
+[Learn Curriculum](https://trello.com/b/LBbldPqS/learn-curriculum)
 
 
