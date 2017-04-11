@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <script type='text/javascript' src='racecar.js'></script>
+  </head>
+  <body>
+    <script>
+      class Engine{
+        constructor(){
+          this.oilLevel = 100
+          this.rpm = 0
+        }
+
+        start(){
+          this.rpm = 500
+        }
+
+        stop(){
+          this.rpm = 0
+        }
+
+        accelerate(){
+          console.log("Warning!  This is a base class method, should not be called")
+        }
+
+        decelerate(){
+          console.log("Warning!  This is a base class method, should not be called")
+        }
+      }
+
+      class TurboEngine extends Engine{
+        constructor(){
+          super()
+          this.horsepower = 450
+        }
+        accelerate(){
+          if(this.rpm != 0){
+            this.rpm += 750 
+          }
+        }
+
+        decelerate(){
+          if(this.rpm != 0){
+            this.rpm -= 750
+          }
+        }
+      }
+
+      class StockEngine extends Engine{
+        constructor(){
+          super()
+          this.horsepower = 250
+        }
+        accelerate(){
+          if(this.rpm != 0){
+            this.rpm += 250 
+          }
+        }
+
+        decelerate(){
+          if(this.rpm != 0){
+            this.rpm -= 250
+          }
+        }
+      }
+
+
+
+
+      let turbo = new TurboEngine()
+      let fastRacecar = new Racecar(turbo)
+
+      let stock = new StockEngine()
+      let slowRacecar = new Racecar(stock)
+      
+      console.log("Test drive the fast racecar")
+      fastRacecar.start()
+      console.log('accelerating')
+      fastRacecar.accelerate()
+      console.log('speed:', fastRacecar.speed)
+
+      console.log('shifting Up')
+      fastRacecar.shiftUp()
+      console.log('speed:', fastRacecar.speed)
+
+
+      console.log("Test drive the slow racecar")
+      slowRacecar.start()
+      console.log('accelerating')
+      slowRacecar.accelerate()
+      console.log('speed:', slowRacecar.speed)
+
+      console.log('shifting Up')
+      slowRacecar.shiftUp()
+      console.log('speed:', slowRacecar.speed)
+    </script>
+  </body>
+</html>
+
