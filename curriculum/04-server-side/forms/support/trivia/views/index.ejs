@@ -1,0 +1,10 @@
+<ul>
+  <% for(var key in questions) { %>
+    <li>
+      <a href="/trivia/<%= key %>">
+        <%= questions[key]["question"] %>
+      </a>
+    </li>
+  <% } %>
+</ul>
+

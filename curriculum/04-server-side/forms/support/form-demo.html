@@ -1,0 +1,75 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Form Demo</h1>
+    <form id='demo-form' action='#' onsubmit='handleFormSubmit(); return false'>
+      <div>
+        <label>Text Input</label>
+        <input type='text' name='textValue' />
+      </div>
+      <div>
+        <label>Prefilled Text</label>
+        <input type='text' name='favoriteColor' value='green' />
+      </div>
+      <div>
+        <h2>Radio Buttons</h2>
+        <label>
+          <input type='radio' name='favoriteBaloonAnimal' value='dog' />
+          Dog
+        </label>
+        <br />
+        <label>
+          <input type='radio' name='favoriteBaloonAnimal' value='butterfly' selected />
+          Butterfly 
+        </label>
+        <br />
+        <label>
+          <input type='radio' name='favoriteBaloonAnimal' value='turtle' />
+          Turtle
+        </label>
+      </div>
+      <div>
+        <h2>Checkboxes</h2>
+        <label>
+          <input type='checkbox' name='javascript' value='true' checked />
+          I want to learn Javascript
+        </label>
+        <br />
+        <label>
+          <input type='checkbox' name='html' value='true' checked />
+          I want to learn HTML
+        </label>
+        <br />
+        <label>
+          <input type='checkbox' name='css' value='true' checked />
+          I want to learn CSS
+        </label>
+        <br />
+        <label>
+          <input type='checkbox' name='css' value='true' />
+          I want to learn LOLCODE
+        </label>
+      </div>
+      <div>
+        <input type='submit' value='Show' />
+      </div>
+    </form>
+
+    <br />
+    <div id='form-values'></div>
+    <script>
+      function handleFormSubmit(){
+        var inputs = document.getElementById('demo-form').elements
+        var obj ={};
+        for(var i = 0 ; i < inputs.length ; i++){
+          var item = inputs.item(i);
+          obj[item.name] = item.value;
+        }
+        document.getElementById("form-values").innerHTML = JSON.stringify(obj);
+        
+      }
+    </script>
+  </body>
+</html>
+
