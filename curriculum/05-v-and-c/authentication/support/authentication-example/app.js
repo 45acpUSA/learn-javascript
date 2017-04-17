@@ -69,7 +69,7 @@ app.get('/',
 app.get('/secret', 
   ensureLoggedIn('/login'),
   function(request, response){
-    response.render('secret', { user: request.user })
+    response.render('secret')
   })
 
 app.get('/login', 

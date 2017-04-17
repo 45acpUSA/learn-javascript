@@ -1,0 +1,33 @@
+<h1>Please Create an Account</h1>
+<% if(typeof errors != 'undefined'){ %>
+  <h4>There were some problems</h4>
+  <ul>
+    <% for(let index in errors){ %>
+      <li><%= errors[index] %></li> 
+    <% } %>
+  </ul>
+<% } %>
+<form action='/register' method='POST'>
+  <div>
+    <label>Name</label>
+    <br />
+    <input type='text' name='name' />
+  </div>
+  <div>
+    <label>Email</label>
+    <br />
+    <input type='text' name='email' />
+  </div>
+  <div>
+    <label>Password</label>
+    <br />
+    <input type='password' name='password' />
+  </div>
+  <div>
+    <input type='submit' value='Create Account' />
+  </div>
+</form>
+<div>
+  Or, <a href='/login'>Login</a>
+</div>
+

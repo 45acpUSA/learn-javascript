@@ -1,0 +1,14 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <div id='user-session-management'>
+      <% if(typeof currentUser != 'undefined'){ %>
+        <a href='/logout'>Logout</a>
+      <% }else{ %>
+        <a href='/login'>Login</a>
+      <% } %>
+    </div>
+    <%- body %> 
+  </body>
+</html>
