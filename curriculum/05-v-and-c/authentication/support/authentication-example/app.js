@@ -12,8 +12,8 @@ let ensureNotLoggedIn = require('connect-ensure-login').ensureNotLoggedIn
 
 // The local strategy require a `verify` function which receives the credentials
 // (`username` and `password`) submitted by the user.  The function must verify
-// that the password is correct and then invoke `cb` with a user object, which
-// will be set at `req.user` in route handlers after authentication.
+// that the password is correct and then invoke `done` with a user object, which
+// will be set at `request.user` in route handlers after authentication.
 passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'

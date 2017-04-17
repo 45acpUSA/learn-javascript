@@ -1,8 +1,12 @@
 let fs = require('fs')
+let bcrypt = require('bcrypt')
 
 module.exports.addUser = function(userAttributes){
   let invalidCheck = userIsInvalid(userAttributes)
   if(invalidCheck == false ){
+    //encrypt password
+    userAttributes.password = encryptPassword(userAttributes.password)
+
     let users = userData()
     users.push(userAttributes)
     save(users)
@@ -11,6 +15,24 @@ module.exports.addUser = function(userAttributes){
     return invalidCheck  
   }
 }
+
+module.exports.doPasswordsMatch = function(userSuppliedPassword, encryptedPassword){
+  return bcrypt.compareSync(userSuppliedPassword, encryptedPassword)
+}
+
+function encryptPassword(password, callback){
+  return bcrypt.hashSync(password, 5)
+}
+
+function findByEmail(email){
+  let users = userData()
+  let user = users.find(function(user){
+    return user.email == email
+  })
+  return user
+}
+module.exports.findByEmail = findByEmail 
+
 
 function userData(){
   let data = fs.readFileSync('./user-data.json','utf-8')
