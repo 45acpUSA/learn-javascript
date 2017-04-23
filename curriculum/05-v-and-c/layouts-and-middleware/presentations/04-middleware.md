@@ -1,5 +1,8 @@
 # Middleware
 
+[Express Middleware](https://expressjs.com/en/guide/using-middleware.html)
+[Writing Middleware](https://expressjs.com/en/guide/writing-middleware.html)
+
 Did You notice in the last section about cookies how we setup Express to use the cookie-parser?
 
 ```Javascript
@@ -74,12 +77,12 @@ Example app listening on port 3000!
 Hello from GET /
 ```
 
-Time to write some middleware.  Backin app.rb:
+Time to write some middleware.  Back in app.js:
 
 ```Javascript
 let express = require('express')
 
-let middlewareA  = (request, response, next)=>{
+let middlewareA  = function(request, response, next){
   console.log("Entering Middleware A")
   next()
   console.log("Finishing Middleware A")
@@ -112,13 +115,13 @@ By Adding another middlware function, we can see that the yo-yo path our request
 
 ```Javascript
 ...
-let middlewareA  = (request, response, next)=>{
+let middlewareA  = function(request, response, next){
   console.log("Entering Middleware A")
   next()
   console.log("Finishing Middleware A")
 }
 
-let middlewareB  = (request, response, next)=>{
+let middlewareB  = function(request, response, next){
   console.log("Entering Middleware B")
   next()
   console.log("Finishing Middleware B")
@@ -178,7 +181,7 @@ app.use(cookieParser())
 Modifying middlewareA, we can see what the cookies look like before and after the request is passed along:
 
 ```Javascript
-let middlewareA  = (request, response, next)=>{
+let middlewareA  = function(request, response, next){
   console.log("Entering Middleware A")
   console.log("page visits: " + request.cookies)
   next()
@@ -225,7 +228,7 @@ Here's the app at this point.  The route itself tracks page views:
 let express = require('express')
 let cookieParser = require('cookie-parser')
 
-let middlewareA  = (request, response, next)=>{
+let middlewareA  = function(request, response, next){
   console.log("Entering Middleware A")
   console.log("page visits: " + request.cookies.pageVisits)
   next()
@@ -233,7 +236,7 @@ let middlewareA  = (request, response, next)=>{
   console.log("page visits: " + request.cookies.pageVisits)
 }
 
-let middlewareB  = (request, response, next)=>{
+let middlewareB  = funtion(request, response, next){
   console.log("Entering Middleware B")
   next()
   console.log("Finishing Middleware B")
@@ -266,7 +269,7 @@ app.listen(3000, function () {
 Imagine that our boss came to us and asked us to add more routes, and track page views for them too.  How could we solve that without repeating a bunch of code?  Well, we could move the page counter up into middleware!  Let's update middlewareB to handle it:
 
 ```Javascript
-let middlewareB  = (request, response, next)=>{
+let middlewareB  = function(request, response, next){
   console.log("Entering Middleware B")
 
   let pageVisits = parseInt(request.cookies.pageVisits) || 0
@@ -315,6 +318,21 @@ app.use(middlewareA)
 Now we add it to the '/' request.  We'll also add an untracked route.
 
 ```Javascript
+app.get('/', 
+  middlewareB, // added middleware for just this route
+  function(request, response){
+    console.log('Visited the tracked page')
+    let pageVisits = parseInt(request.cookies.pageVisits)
+    response.send("Hello World. Page Visits:" + pageVisits )
+  })
+
+app.get('/untracked', // no page tracking middleware here
+  function(request, response){
+    console.log('Visited the untracked page')
+
+    let pageVisits = parseInt(request.cookies.pageVisits)
+    response.send("Hello from the untracked page: " + pageVisits)
+  })
 ```
 
 Here's the output from loading both pages a few times

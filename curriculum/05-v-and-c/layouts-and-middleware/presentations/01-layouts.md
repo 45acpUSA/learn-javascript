@@ -1,9 +1,13 @@
 # Layouts
 
-Recall the Trivia app that we've been building using Express JS.
+> “Don’t repeat yourself. It’s not only repetitive, it’s redundant, and people have heard it before.”
+>
+> ― Lemony Snicket, Who Could That Be at This Hour?
 
-You can clone the repo here if you'd like to start with a fresh copy
-[Trivia App](https://github.com/notch8/layout-forms-auth-base-trivia)
+Recall the Trivia app that we've been building using Express JS. You can clone the repo here if you'd like to start with a fresh copy.  [Trivia App](https://github.com/notch8/layout-forms-auth-base-trivia)
+
+
+[Don't Repeat Yourself](http://deviq.com/don-t-repeat-yourself/)
 
 The app currently has two views, and you may have noticed that there is a lot of common markup between the two.
 
@@ -37,7 +41,7 @@ The app currently has two views, and you may have noticed that there is a lot of
   <head>
   </head>
   <body>
-    <h1> San Diego Trivia </h1>
+    <h3> San Diego Trivia </h3>
     <strong>
       <%= question %>
     </strong>
@@ -51,15 +55,17 @@ The app currently has two views, and you may have noticed that there is a lot of
 </html>
 ```
 
-Everything in these views is the same except for the contents of the ```<body>``` section.  This is very common in webapps, so common it turns out, that there is a pattern to factor out the common parts so we only need to maintain it in one spot.  To do this, we use a layout view for the common code, and then render the unique parts inside of the layout on each page.
+Everything in these views is the same except for the part of the ```<body>``` section.  This is very common in webapps, so common it turns out, that there is a pattern to factor out the common parts so we only need to maintain it in one spot.  To do this, we use a layout view for the common code, and then render the unique parts inside of the layout on each page.
 
-To get started, we'll need to install another npm package.  Navigate to your trivia app, then:
+![layout](https://s3.amazonaws.com/learn-site/curriculum/layout-1.png)
+
+The common parts of the HTML pages can be pulled out into a layout, reducing the amount of code we need to write for each page.  To get started, we'll need to install another npm package.  Navigate to your trivia app, then:
 
 ```
 $ npm install express-ejs-layouts --save
 ```
 
-Then inside app.js, we require it, and tell Express that we want to use the package.
+Then inside app.js, we require it, and tell Express that we want to use the layout package.
 
 ```Javascript
 // ./app.js
@@ -92,6 +98,8 @@ By default, ExpressLayouts will use the file ```./views/layout.ejs``` as the lay
   </body>
 </html>
 ```
+
+Express will automatically replace ```<%- body %>``` with the content we specify when we call ```app.render('index.ejs')``` from the route.
 
 ```HTML
 // ./views/index.ejs
@@ -149,7 +157,7 @@ li{
 }
 ```
 
-Then in layout.ejs, we can add it to the ```<head>``` section:
+Then in layout.ejs, we can add it to the ```<head>``` section, and now we have a shared stylesheet across the entire application.
 
 ```HTML
 <html>

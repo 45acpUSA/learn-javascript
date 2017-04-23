@@ -1,0 +1,16 @@
+{
+  "name": "haiku-promise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "asciify": "^1.3.5",
+    "express": "^4.15.2",
+    "fs-promise": "^2.0.2"
+  }
+}

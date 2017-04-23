@@ -1,22 +1,28 @@
 # Cookies and Sessions
 
+[W3Schools](https://www.w3schools.com/js/js_cookies.asp)
+[Session NPM package](https://www.npmjs.com/package/express-session)
+
+
 Every request that a server receives is independent from every other request that comes in.  In other words the server doesn't know anything about the request except for what the information in that particular request.  It doesn't know anything about the user making the request.  It doesn't even know that that user made a request a second ago, an hour ago, or a year ago.  It doesn't know anything special about the request, that is, except if the request itself provides enough information for the server to figure that stuff out.
 
-Web apps do know stuff about us users between requests of course.  Otherwise, you wouldn't be able to log into a webpage, and have it remember you on every new page you visit.  Servers keep all kinds of information about users, and presents that data each time they log in, day after day, and year after year.
+Web apps do know stuff about users between requests of course.  Otherwise, you wouldn't be able to log into a webpage, and have it remember you on every new page you visit.  Servers keep all kinds of information about users, and present that data each time they log in, day after day, and year after year.
 
 So how do servers know that its you making the request, and that you logged in a few minutes before?  The answer is that it is in the request, as we talked about earlier, specifically, it is information kept in a cookie.
 
-A cookie is a special part of the request that isn't visible to normal users, and is sent along with every request in the HEAD.  Servers can set whatever information they like (up to a certain size), and then use that information when it is passed back to them.
-
-Cookies are unique to the browser that is storing them.  They can be set to expire and be deleted after a certain time, or they can be set to be deleted as soon as the user closes the window or the browser.  Users can also easily delete cookies, so we can never count on a cookie existing for our application to work.
+A cookie is a special part of the request that is managed by the server and passed back and forth between the server and the browser.  Servers can set whatever information they choose in a cookie (up to a certain size), and then use that information when it is passed back to them.
 
 ![cookies](https://s3.amazonaws.com/learn-site/curriculum/1280px-HTTP_cookie_exchange.svg.png)
+
+Cookies are unique to the browser that is storing them.  If the user changes browsers or computers, they will get a new set of cookies.  Cookies can be set to expire and be deleted after a certain time, or they can be set to be deleted as soon as the user closes the browser window.  Users can also easily delete cookies, so we can never count on a cookie existing when a web request comes in.
 
 Cookies are very useful.  Here's a list of all the cookies that learnacademy.org sets to help customize the experience for users when they visit the site
 
 ![learn cookies](https://s3.amazonaws.com/learn-site/curriculum/learn-cookies.png)
 
-Let's setup a new Express app, and explore how we can interact with cookies.  Express doesn't expose cookies to the developer in an accessible way by default, but by adding the 'cookie-parser' NPM package we can access them.
+### Using Cookies in Express
+
+Let's setup a new Express app, and explore how we can interact with cookies.  Express doesn't expose cookies to the developer by default, but by adding the 'cookie-parser' NPM package we can access them.
 
 ```
 $ mkdir cookies
@@ -82,7 +88,7 @@ app.get('/',
 
 # Cookie Expiration
 
-Cookies by default expire when the browser window is closed.  We can set an expiration time for them to allow them to persist between browser sessions.  We can also set the expiration time in the past to force the browser to delete the cookie for us.
+Cookies by default expire when the browser window is closed.  We can set an expiration time and allow them to stick around in the user's browser for days or even years.  We can also set the expiration time in the past to force the browser to delete the cookie for us.
 
 The ```response.cookie()``` method also takes an optional options hash, where we can set the ```maxAge``` of the cookie in seconds.  Browsers translate this to the seconds since the cookie is set.
 
@@ -134,7 +140,11 @@ app.listen(3000, function () {
 
 ## Sessions
 
-Sessions in an Express app work in conjunction with cookies.  Session data is not stored in the cookie itself, but rather is kept server side.  This minimizes the amount of data that is transfered over the wire with each request.  The session data can grow to be fairly large, and would slow the equest down if it was transfered each time.  
+Sessions in an Express app work in conjunction with cookies.  The session is used to keep track of multiple values for a user as they interact with the website.  As an example, if a website allowed the user to select between several languages, we could store that choice in the session, so each page request could use that information when deciding how to render the page.
+
+Session data is not stored in the cookie itself, but rather is kept server side and looked up for each request based on a key value stored in a cookie.  This minimizes the amount of data that is transfered over the wire with each request.  The session data can grow to be fairly large, and would slow the equest down if it was transfered each time.  
+
+![session](https://s3.amazonaws.com/learn-site/curriculum/session.png)
 
 In our examples, and some of the ones following in class, the session is stored in the memory of the running process.  This isn't suitable for an app that is going out to production because it wouldn't be shared if you had more than one server handling requests.  What is normally done in production is to keep the sessions in some sort of data store, then set a key in a cookie to recall it with.  This gives the app the best of both worlds: small transfer size, and rich session data.
 

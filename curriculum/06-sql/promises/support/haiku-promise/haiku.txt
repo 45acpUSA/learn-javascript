@@ -1,0 +1,3 @@
+Promises are fun
+Promises make life easy
+Use promises daily
