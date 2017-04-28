@@ -1,0 +1,23 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Gify example
+    <form action='/' method='post'>
+      <div>
+        <label>Search for something</label>
+        <br />
+        <input type='text' name='searchTerm', value='<%= searchTerm %>' />
+      </div>
+      <div>
+        <input type='submit' value='Submit' />
+      </div>
+    </form>
+
+    <div>
+      <% for(var index in urls){ %>
+        <img src="<%= urls[index] %>" >
+      <% } %>
+    </div>
+  </body>
+</html>
