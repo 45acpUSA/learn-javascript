@@ -54,12 +54,12 @@ function createTables(){
   })
   .then(function(){
     return new Promise(function(resolve, reject){
-      UsState.sync({force: true})
+      resolve(UsState.sync({force: true}))
     })
   })
   .then(function(){
     return new Promise(function(resolve, reject){
-      City.sync({force: true})
+      resolve(City.sync({force: true}))
     })
   })
 }
