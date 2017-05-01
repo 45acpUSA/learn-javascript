@@ -8,6 +8,8 @@ In this lesson, we'll look at the following topics
 * How to use Sequelize-CLI to create tables in the database and models in our project
 * How to update the database using migrations
 
+[Clone and run this example](https://github.com/notch8/learn-javascript-examples/tree/master/06-sql/vegetables)
+
 ## CLI
 
 'CLI' stands for 'Command Line Interface', so the Sequelize-CLI is a command line interface to Sequelize.  It provides several utilities that we can use directly from the command line to manage our database.

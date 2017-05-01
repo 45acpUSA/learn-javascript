@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         Phone.belongsTo(models.Contact,{
-          foreignKey: 'phoneId',
+          foreignKey: 'contactId',
           onDelete: 'CASCADE'
         })
       }

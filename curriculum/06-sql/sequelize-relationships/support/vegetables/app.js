@@ -2,7 +2,7 @@ let Vegetable = require('./models').Vegetable
 
 Vegetable.create({
   name: 'Squash',
-  description: 'asty fall vegetable.',
+  description: 'Tasty fall vegetable.',
   calories: 110,
   color: 'orange'
 }).then(function(vegetable){

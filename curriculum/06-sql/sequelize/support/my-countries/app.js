@@ -1,9 +1,3 @@
-#creating a table with Sequelize
-Tomorrow, we're going to dive deep into managing the structure of the database.  Below is a quick script to use if you don't have the Countries database on your LEARN computer.
-
-This Script creates a new table called 'my_countries' using Sequelize.  We first connect to the database, then define the model as normal.  Finally, we call ```MyCountry.sync()``` which creates the table, and sets up the fields according to the model definition.
-
-```Javascript
 let Sequelize = require('sequelize')
 
 let sequelize = new Sequelize( 'countries', '','', {
@@ -67,4 +61,5 @@ function createCountries(){
 
   return Promise.all(promises)
 }
-```
+
+
