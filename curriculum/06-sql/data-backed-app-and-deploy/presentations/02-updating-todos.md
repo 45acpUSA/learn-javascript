@@ -6,7 +6,8 @@ Now that we have Todos displaying on the Todo List detail page, we'd like to be 
 * As a user, I want to be able to mark completed todos.
 
 This is the design of the app that we are working towards.
-![todo 4]()
+
+![todo 4](https://s3.amazonaws.com/learn-site/curriculum/todo-list/todo-4.png)
 
 ## Add a route to update Todos
 We need to add a route that looks up a todo based on a passed ID, and updates its ```.isComplete``` flag to true when the user clicked the 'done' button.  We'll use a form in the HTML to accomplish this, so the route needs to accept POST requests.
@@ -78,6 +79,13 @@ And we add it to the layout.
   <head>
 ```
 
-So there we have it, we can now mark our todos off as we complete them.
+## Completed Story
+With those additions, we've completed this story:
 
-![todo 4]()
+
+* As a User, I want to be able to mark todo list items as complete.
+
+
+![todo 4](https://s3.amazonaws.com/learn-site/curriculum/todo-list/todo-4.png)
+
+You can view the complete project [here](https://github.com/notch8/learn-javascript-examples/tree/06-sql_express-full-stack_update-todos/06-sql/express-full-stack)

@@ -9,6 +9,21 @@ Today, we're going to build an end to end todo list using Express and Sequelize.
 * Sequelize
 * Sequelize-CLI
 
+## Stories
+We'll tackle this exercise in an agile way, breaking the bigger challenge down into manageable user stories.
+
+### Epic
+As a User, I want to manage my todo lists in a web application
+
+### Stories
+* As a User, I want to see a collection of my todo lists.
+* As a User, I want to see the items on a todo list.
+* As a User, I want to be able to mark todo list items as complete.
+* As a User, I want to be able to add more items to a todo list.
+* As a User, I want to be able to remove completed items from a todo list.
+* As a User, I want to be able to remove Todo Lists.
+* As a User, I want to be able to add new Todo Lists.
+
 ## App Setup
 
 Let's jump right in, and get a basic Express app running
